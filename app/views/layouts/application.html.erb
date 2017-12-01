@@ -4,25 +4,17 @@
     <title>Pinteresting</title>
     <%= csrf_meta_tags %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= javascript_include_tag 'application' %>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </head>
-     <%= link_to "Home", root_path %>
-     <%= link_to "About", about_path %>
-     <% flash.each do |name, msg| %>
-     <%= content_tag(:div, msg, class: "alert alert-#{name}") %>
-<% end %>
-
-
-<%= render 'layouts/header' %>
+    <%= render "layouts/header" %>
   <body>
-
     <div class="container">
-          <%= yield %>
-     </div>
+      <% flash.each do |name, msg| %>
+        <%= content_tag(:div, msg, class: "alert alert-info") %>
+      <% end %>
+      <%= yield %>
+    </div?
   </body>
 </html>
